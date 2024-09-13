@@ -1,5 +1,6 @@
 package com.product.controller;
 
+import com.product.entity.Product;
 import com.product.serviceImplData.ServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,7 +16,9 @@ public class ProductController {
 
 
 @PostMapping("/create")
-    public String saveProduct(RequestBody Product product) {
+    public String saveProduct(@RequestBody Product product)
+{
     service.createProduct(product);
+    return "Created";
     }
 }
